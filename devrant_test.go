@@ -1,13 +1,13 @@
-package devrant_test
+package devgorant_test
 
 import (
 	"testing"
 
-	"github.com/jayeshsolanki93/devgorant/devrant"
+	"github.com/jayeshsolanki93/devgorant"
 )
 
 func TestProfile_jayeshs(t *testing.T) {
-	devrant := devrant.New()
+	devrant := devgorant.New()
 	user, _, err := devrant.Profile("jayeshs")
 	if err != nil {
 		t.Fatalf(`err != nil, got %v`, err)
@@ -23,7 +23,7 @@ func TestProfile_jayeshs(t *testing.T) {
 }
 
 func TestRant_27317(t *testing.T) {
-	devrant := devrant.New()
+	devrant := devgorant.New()
 	rant, _, err := devrant.Rant(27317)
 	if err != nil {
 		t.Fatalf(`err != nil, got %v`, err)
@@ -35,7 +35,7 @@ func TestRant_27317(t *testing.T) {
 }
 
 func TestRants(t *testing.T) {
-	devrant := devrant.New()
+	devrant := devgorant.New()
 	rants, err := devrant.Rants("algo", 50, 0)
 	if err != nil {
 		t.Fatalf(`err != nil, got %v`, err)

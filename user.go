@@ -1,4 +1,4 @@
-package devrant
+package devgorant
 
 type UserModel struct {
 	Username    string `json:"username"`

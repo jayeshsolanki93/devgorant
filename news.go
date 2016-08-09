@@ -1,4 +1,4 @@
-package devrant
+package devgorant
 
 type NewsModel struct {
 	Id       int    `json:"id"`

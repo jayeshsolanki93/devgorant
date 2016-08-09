@@ -1,4 +1,4 @@
-package devrant
+package devgorant
 
 type CommentModel struct {
 	Id           int    `json:"id"`

@@ -1,4 +1,4 @@
-package devrant
+package devgorant
 
 type ImageModel struct {
 	Url    string `json:"url"`

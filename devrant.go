@@ -1,4 +1,4 @@
-package devrant
+package devgorant
 
 import (
 	"encoding/json"

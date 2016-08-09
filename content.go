@@ -1,4 +1,4 @@
-package devrant
+package devgorant
 
 type ContentModel struct {
 	Rants     []RantModel    `json:"rants"`

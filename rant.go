@@ -1,4 +1,4 @@
-package devrant
+package devgorant
 
 type RantModel struct {
 	Id            int        `json:"id"`
