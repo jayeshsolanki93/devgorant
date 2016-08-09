@@ -117,33 +117,3 @@ func getUserId(username string) (int, error) {
 func New() *Client {
 	return new(Client)
 }
-
-type RantsResponse struct {
-	Success  bool        `json:"success"`
-	Rants    []RantModel `json:"rants"`
-	Settings string      `json:"settings"`
-	Set      string      `json:"set"`
-	Wrw      int         `json:"wrw"`
-	News     NewsModel   `json:"news"`
-}
-
-type RantResponse struct {
-	Success  bool           `json:"success"`
-	Rant     RantModel      `json:"rant"`
-	Comments []CommentModel `json:"comments"`
-}
-
-type UserResponse struct {
-	Success bool      `json:"success"`
-	Profile UserModel `json:"profile"`
-}
-
-type SearchResponse struct {
-	Success bool        `json:"success"`
-	Rants   []RantModel `json:"results"`
-}
-
-type GetUserIdResponse struct {
-	Success bool `json:"success"`
-	UserId  int  `json:"user_id"`
-}
