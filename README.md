@@ -1,4 +1,5 @@
-# devgorant
+# devgorant [![GoDoc](https://godoc.org/github.com/jayeshsolanki93/devgorant?status.svg)](https://godoc.org/github.com/jayeshsolanki93/devgorant) [![Build Status](https://travis-ci.org/jayeshsolanki93/devgorant.svg?branch=master)](https://travis-ci.org/jayeshsolanki93/devgorant)
+
 Unofficial golang wrapper for the [devRant API](https://www.devrant.io/)
 
 ## Installation
