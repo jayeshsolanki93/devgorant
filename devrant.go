@@ -40,6 +40,9 @@ func (c *Client) Rants(sort string, limit int, skip int) ([]RantModel, error) {
 	}
 	var data RantsResponse
 	json.NewDecoder(res.Body).Decode(&data)
+	if !data.Success && data.Error != "" {
+		return nil, errors.New(data.Error)
+	}
 	return data.Rants, nil
 }
 
@@ -52,6 +55,9 @@ func (c *Client) Rant(rantId int) (RantModel, []CommentModel, error) {
 	}
 	var data RantResponse
 	json.NewDecoder(res.Body).Decode(&data)
+	if !data.Success && data.Error != "" {
+		return RantModel{}, nil, errors.New(data.Error)
+	}
 	return data.Rant, data.Comments, nil
 }
 
@@ -68,6 +74,9 @@ func (c *Client) Profile(username string) (UserModel, ContentModel, error) {
 	}
 	var data UserResponse
 	json.NewDecoder(res.Body).Decode(&data)
+	if !data.Success && data.Error != "" {
+		return UserModel{}, ContentModel{}, errors.New(data.Error)
+	}
 	return data.Profile, data.Profile.Content.Content, nil
 }
 
@@ -80,6 +89,9 @@ func (c *Client) Search(term string) ([]RantModel, error) {
 	}
 	var data SearchResponse
 	json.NewDecoder(res.Body).Decode(&data)
+	if !data.Success && data.Error != "" {
+		return nil, errors.New(data.Error)
+	}
 	return data.Rants, nil
 }
 
@@ -92,6 +104,9 @@ func (c *Client) Surprise() (RantModel, error) {
 	}
 	var data RantResponse
 	json.NewDecoder(res.Body).Decode(&data)
+	if !data.Success && data.Error != "" {
+		return RantModel{}, errors.New(data.Error)
+	}
 	return data.Rant, nil
 }
 
@@ -104,6 +119,9 @@ func (c *Client) WeeklyRants() ([]RantModel, error) {
 	}
 	var data RantsResponse
 	json.NewDecoder(res.Body).Decode(&data)
+	if !data.Success && data.Error != "" {
+		return nil, errors.New(data.Error)
+	}
 	return data.Rants, nil
 }
 
@@ -116,6 +134,9 @@ func getUserId(username string) (int, error) {
 	}
 	var data GetUserIdResponse
 	json.NewDecoder(res.Body).Decode(&data)
+	if !data.Success && data.Error != "" {
+		return 0, errors.New(data.Error)
+	}
 	return data.UserId, nil
 }
 

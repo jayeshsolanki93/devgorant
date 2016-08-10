@@ -66,6 +66,7 @@ type NewsModel struct {
 
 type RantsResponse struct {
 	Success  bool        `json:"success"`
+	Error    string      `json:"error"`
 	Rants    []RantModel `json:"rants"`
 	Settings string      `json:"settings"`
 	Set      string      `json:"set"`
@@ -75,21 +76,25 @@ type RantsResponse struct {
 
 type RantResponse struct {
 	Success  bool           `json:"success"`
+	Error    string         `json:"error"`
 	Rant     RantModel      `json:"rant"`
 	Comments []CommentModel `json:"comments"`
 }
 
 type UserResponse struct {
 	Success bool      `json:"success"`
+	Error   string    `json:"error"`
 	Profile UserModel `json:"profile"`
 }
 
 type SearchResponse struct {
 	Success bool        `json:"success"`
+	Error   string      `json:"error"`
 	Rants   []RantModel `json:"results"`
 }
 
 type GetUserIdResponse struct {
-	Success bool `json:"success"`
-	UserId  int  `json:"user_id"`
+	Success bool   `json:"success"`
+	Error   string `json:"error"`
+	UserId  int    `json:"user_id"`
 }
